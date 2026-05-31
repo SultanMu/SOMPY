@@ -20,7 +20,7 @@ from multiprocessing.dummy import Pool
 from multiprocessing import cpu_count
 from scipy.sparse import csr_matrix
 from sklearn import neighbors
-from sklearn.externals.joblib import Parallel, delayed, load, dump
+from joblib import Parallel, delayed, load, dump
 import sys
 
 from .decorators import timeit
@@ -352,7 +352,8 @@ class SOM(object):
                 logging.info("nan quantization error, exit train\n")
                 
                 #sys.exit("quantization error=nan, exit train")
-            
+
+        bmu = self.find_bmu(data, njb=njob)
         bmu[1] = np.sqrt(bmu[1] + fixed_euclidean_x2)
         self._bmu = bmu
 
@@ -534,9 +535,9 @@ class SOM(object):
 
         return out.astype(int)
 
-    def cluster(self, n_clusters=8):
+    def cluster(self, n_clusters=8, random_state=0):
         import sklearn.cluster as clust
-        cl_labels = clust.KMeans(n_clusters=n_clusters).fit_predict(
+        cl_labels = clust.KMeans(n_clusters=n_clusters, random_state=random_state).fit_predict(
             self._normalizer.denormalize_by(self.data_raw,
                                             self.codebook.matrix))
         self.cluster_labels = cl_labels

@@ -14,7 +14,7 @@ As much as possible, the structure of SOM is similar to `somtoolbox` in Matlab. 
 
 
 ### Dependencies:
-SOMPY has the following dependencies (tested only with Python 2.7x):
+SOMPY has the following dependencies:
 - numpy
 - scipy
 - scikit-learn
@@ -30,26 +30,28 @@ python setup.py install
 
 
 Many thanks to @sebastiandev, the library is now standardized in a pythonic tradition. Below you can see some basic examples, showing how to use the library.
-But I recommend you to go through the codes. There are several functionalities already implemented, but not documented. I would be very happy to add your new examples here. 
+But I recommend you to go through the codes. There are several functionalities already implemented, but not documented. I would be very happy to add your new examples here.
 
-[Basice Example](https://gist.github.com/sevamoo/035c56e7428318dd3065013625f12a11)
+[Basic Example](https://gist.github.com/sevamoo/035c56e7428318dd3065013625f12a11)
 
 ### Citation
 
 There is no published paper about this library. However if possible, please cite the library as follows:
 
 ```
-Main Contributers:
-Vahid Moosavi @sevamoo
-Sebastian Packmann @sebastiandev
-Iván Vallés @ivallesp 
+@misc{moosavi2014sompy,
+  title={SOMPY: A Python Library for Self Organizing Map (SOM)},
+  author={Moosavi, V and Packmann, S and Vall{\'e}s, I},
+  note={GitHub.[Online]. Available: https://github. com/sevamoo/SOMPY},
+  year={2014}
+}
 ```
 
 
-For more information, you can contact me via sevamoo@gmail.com or svm@arch.ethz.ch, but please report an issue first.
+For more information, you can contact me via sevamoo@gmail.com but please report an issue first.
 
 
 
 
-Thanks a lot. 
+Thanks a lot.
 Best Vahid Moosavi
